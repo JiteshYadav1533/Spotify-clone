@@ -1,0 +1,35 @@
+.border{
+    border: 2px solid red;
+    margin: 3px;
+}
+
+
+.flex{
+    display: flex;
+}
+.justify-centre{
+    justify-content: center;
+}
+.items-centre{
+    align-items: center;
+} 
+/* Width of scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+/* Scroll thumb */
+::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #8a8a8a;
+}
