@@ -185,8 +185,8 @@ async function main() {
 
 //add an event listener to mute the volume
  document.querySelector(".volume>img").addEventListener("click" , e=>{
-    if(e.target.src.includes("volume.svg")){
-       e.target.src = e.target.src.replace("img/volume.svg" , "mute.svg")
+    if(e.target.src.includes("img/volume.svg")){
+       e.target.src = e.target.src.replace("img/volume.svg" , "img/mute.svg")
         currentSong.volume=0;
         document.querySelector(".range").getElementsByTagName("input")[0].value=0;
     }
