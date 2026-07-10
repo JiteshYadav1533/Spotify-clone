@@ -36,14 +36,14 @@ async function getsongs(folder) {
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
     songUL.innerHTML = " "
     for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + ` <li><img class="invert" src="music.svg" alt="" srcset="">
+        songUL.innerHTML = songUL.innerHTML + ` <li><img class="invert" src="img/music.svg" alt="" srcset="">
                       <div class="info">
                           <div>${song.replaceAll("%20", " ")}</div>
                           <div>Jitesh</div>
                       </div>
                       <div class="playnow">
 <span>Play Now</span>
-                          <img class="invert" src="play.svg" alt="" srcset="">
+                          <img class="invert" src="img/play.svg" alt="" srcset="">
                       </div>
                       </li>`;
     }
@@ -63,7 +63,7 @@ const playMusic = (track, pause = false) => {
 
         currentSong.play()
 
-        play.src = "pause.svg";
+        play.src = "img/pause.svg";
     }
     document.querySelector(".songinfo").innerHTML = decodeURI(track)
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
@@ -127,11 +127,11 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play()
-            play.src = "pause.svg";
+            play.src = "img/pause.svg";
         }
         else {
             currentSong.pause()
-            play.src = "play.svg";
+            play.src = "img/play.svg";
         }
     })
     //listen for time update event
@@ -179,19 +179,19 @@ async function main() {
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         currentSong.volume = parseInt(e.target.value) / 100
         if (currentSong.volume>0){
-            document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("mute.svg" , "volume.svg")
+            document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("img/mute.svg" , "img/volume.svg")
         }
     })
 
 //add an event listener to mute the volume
  document.querySelector(".volume>img").addEventListener("click" , e=>{
     if(e.target.src.includes("volume.svg")){
-       e.target.src = e.target.src.replace("volume.svg" , "mute.svg")
+       e.target.src = e.target.src.replace("img/volume.svg" , "mute.svg")
         currentSong.volume=0;
         document.querySelector(".range").getElementsByTagName("input")[0].value=0;
     }
     else{
-        e.target.src = e.target.src.replace("mute.svg" , "volume.svg")
+        e.target.src = e.target.src.replace("img/mute.svg" , "img/volume.svg")
         currentSong.volume= .10;
         document.querySelector(".range").getElementsByTagName("input")[0].value=10;
     }
